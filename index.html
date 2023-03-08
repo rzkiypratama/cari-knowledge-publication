@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y66525NQV6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-Y66525NQV6');
+	</script>
+	<!-- Basic Page Needs
+================================================== -->
+
+	<title>Knowledge Publication</title>
+
+	<link rel="icon" href="img/icon/icon.png">
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+	<meta name="csrf-token" content="YeBtGGeC8Vw6aKYlx5g5rYchefbglgDnF5G56ACR">
+	<meta name="base-url" content="https://knowledge.caribencana.id">
+	<meta name="asset-url" content="https://knowledge.caribencana.id/">
+	<meta name="languages" content="EN">
+	<meta name="auth" content="f2nH4F5Syk71mh8qHhWMVSyAcLRWgtRJfJ6rETINVehjuNoie9ZZcqtYDmz1">
+
+	<meta name="description"
+		content="Spatial-based disaster related journal & research repositories across Indonesia and Southeast Asia. It is a free to use machine assisted search engine to find disaster knowledge in Indonesia.">
+
+	<meta name="keyword" content="CARI!, knowledge management, disaster risk reduction, disaster risk and resiliency">
+
+	<meta property="og:type" content="website" />
+
+	<!-- Facebook Meta -->
+	<meta property="og:url" content="https://caribencana.id" />
+	<meta property="og:title" content="Knowledge Management Portal | CARI!" />
+	<meta property="og:site_name" content="Knowledge Management Portal | CARI!" />
+	<meta property="og:description"
+		content="Spatial-based disaster related journal & research repositories across Indonesia and Southeast Asia. It is a free to use machine assisted search engine to find disaster knowledge in Indonesia." />
+	<meta property="og:image" content="https://caribencana.id/frontend/img/favicon.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="fb:app_id" content="1181310082711721" />
+
+	<!-- Twitter Meta -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@caribencana_id">
+	<meta name="twitter:url" content="https://caribencana.id" />
+	<meta name="twitter:creator" content="@caribencana_id">
+	<meta name="twitter:title" content="Knowledge Management Portal | CARI!">
+	<meta name="twitter:description"
+		content="Spatial-based disaster related journal & research repositories across Indonesia and Southeast Asia. It is a free to use machine assisted search engine to find disaster knowledge in Indonesia.">
+	<meta name="twitter:image" content="https://caribencana.id/frontend/img/favicon.png">
+
+	<!-- CSS
+================================================== -->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+		crossorigin="" />
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/main-color.css" id="colors">
+	<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+	<link rel="stylesheet" href="css/jquery.loadingModal.css">
+
+	<link rel="stylesheet" href="css/ocha/humanitarian-icons-v02.css">
+
+	<script src="https://kit.fontawesome.com/784dc1b554.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+
+	<!-- Or for RTL support -->
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
+
+	<link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
+
+	<link rel="stylesheet" href="css/introjs-modern.css">
+
+	<link rel="stylesheet" href="css/jquery.loadingModal.css">
+
+	<!-- Material Icon CSS -->
+	<link rel="stylesheet" href="css/material-icon.css">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+	<!-- bootstrap select -->
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/plugins/cari_style.css">
+
+	<style>
+		.how-to-use-btn {
+			background-color: #f57133;
+			border-radius: 20px;
+			border: 1px solid #f57133;
+			color: rgba(255, 255, 255, 0.85);
+		}
+
+		.form-check-label {
+			display: block;
+			font-weight: 500;
+			font-size: 12px;
+			margin-bottom: 0px;
+			padding-left: 5px;
+		}
+
+		.container-feedback {
+			margin-right: auto;
+			margin-left: auto;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.legend {
+			border: 1px;
+		}
+
+		.test {
+			color: black;
+			font-size: 10px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-bottom: 10px;
+			background-color: #d6d6d6;
+			display: block;
+			text-transform: uppercase;
+			text-align: center;
+			border-radius: 5px;
+		}
+
+		.test i {
+			height: 100px;
+			float: left;
+		}
+
+		.test span {
+			float: right;
+		}
+
+		.svg-flag {
+			color: #fff;
+		}
+
+		.svg-flag img {
+			height: 20px;
+			width: 20px;
+			margin-left: 10px;
+			margin-right: 2px;
+		}
+
+		.img-svg {
+			padding: 10px;
+			text-align: center;
+		}
+
+		@media screen and (max-width: 900px) {
+			#publication-header {
+				display: none;
+			}
+
+			#txt1,
+			#txt2 {
+				display: none;
+			}
+		}
+	</style>
+
+	<style>
+		.panel-layer {
+			width: 50%;
+			border-radius: 8px;
+			height: 250px;
+			z-index: 3;
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(24px);
+			color: var(--white);
+			float: left;
+			display: none;
+
+		}
+
+		/* width */
+		::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(24px);
+		}
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+			background: #888;
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
+
+
+		.brief {
+			/* Brief */
+			width: 100%;
+			min-height: 364px;
+			padding-bottom: 24px;
+			background: linear-gradient(180deg, rgba(245, 113, 51, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+			background-image: url("https://knowledge.caribencana.id/img/svg/bg-wave.svg");
+			background-position: bottom;
+			background-repeat: no-repeat;
+			background-size: 100% auto !important;
+
+			/* Inside auto layout */
+
+			flex: none;
+			order: 1;
+			flex-grow: 0;
+		}
+
+		.brief-content {
+			box-sizing: border-box;
+			position: static;
+			width: 100%;
+			min-height: 250px;
+			background: #FFFFFF;
+			/* Light */
+			border: 1px solid #DDDDDD;
+			border-radius: 16px;
+		}
+
+		div.sidebar {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 25px;
+		}
+
+		#area-brief {
+			padding: 24px 36px;
+		}
+
+		.select2-container {
+			width: 100% !important;
+		}
+
+		.select2-container .select2-selection--single {
+			display: flex;
+			height: 40px;
+			align-items: center;
+			align-content: center;
+			width: 100%;
+		}
+
+		.select2-container--default .select2-selection--single .select2-selection__arrow {
+			height: 40px;
+			position: absolute;
+			top: 1px;
+			right: 4px;
+			width: 20px;
+		}
+
+		.select2-selection__rendered {
+			display: block;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+			background-color: #f57133;
+			color: white;
+		}
+
+		.select2-container--default .select2-selection--single {
+			/*display: flex;*/
+			/*align-items: center;*/
+			/*align-content: center;*/
+			/*justify-content: flex-end;*/
+			/*padding-top: 8px;*/
+			background-color: transparent !important;
+		}
+
+		.select2-dropdown,
+		.select2-selection--single {
+			border: 1px solid #dbdbdb !important;
+		}
+	</style>
+	<!-- END CSS
+================================================== -->
+</head>
+
+<body>
+
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MR4JT9N" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<!-- Loading -->
+	<div class="loading-container">
+		<svg class="svg" version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="170.49px" height="177px"
+			viewBox="0 0 170.49 177" overflow="inherit" xml:space="preserve">
+			<polygon class="hex" points="16.623,87 0,58.5 16.623,30 49.868,30 66.49,58.5 49.868,87 " />
+			<polygon class="hex" points="68.623,57 52,28.5 68.623,0 101.868,0 118.49,28.5 101.868,57 " />
+			<polygon class="hex" points="120.623,87 104,58.5 120.623,30 153.868,30 170.49,58.5 153.868,87 " />
+			<polygon class="hex" points="120.623,147 104,118.5 120.623,90 153.868,90 170.49,118.5 153.868,147 " />
+			<polygon class="hex" points="68.623,177 52,148.5 68.623,120 101.868,120 118.49,148.5 101.868,177 " />
+			<polygon class="hex" points="16.623,147 0,118.5 16.623,90 49.868,90 66.49,118.5 49.868,147 " />
+			<polygon class="hex" points="68.623,117 52,88.5 68.623,60 101.868,60 118.49,88.5 101.868,117 " />
+		</svg>
+		<div id="loading-text">Due the voluminous number of all research articles, please wait for a moment.</div>
+	</div>
+	<div class=" bg-white load">
+		<div class="loader-wrapper">
+			<div class="preloader">
+				<div class="preloader loader-inner"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header Container
+================================================== -->
+
+		<header>
+			<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-white cari-nav fixed-top">
+				<div class="container-fluid" id="myLinks">
+					<a href="https://caribencana.id"><img src="https://caribencana.id/frontend/img/cari-logo.png"
+							class="cari-logo-nav mx-5"></a>
+
+					<button class="navbar-toggler primary" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="material-icons-round">menu</span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end;">
+						<ul class="navbar-nav  mb-lg-0">
+							<li class="nav-item mx-3">
+								<a class="nav-link" href="https://caribencana.id">Home</a>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="nav-link" href="https://knowledge.caribencana.id/" target="_blank">Knowledge Portal</a>
+							</li>
+							<li class="nav-item dropdown mx-3">
+								<a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
+									data-bs-toggle="dropdown" aria-expanded="false">About</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<!--<li><a class="dropdown-item" href="https://caribencana.id/cari">About CARI!</a></li>-->
+									<li><a class="dropdown-item" href="https://caribencana.id/recognition">Recognitions</a></li>
+									<!-- <li><a class="dropdown-item" href="https://caribencana.id/partners">Partners & Clients</a></li> -->
+									<!--<li><a class="dropdown-item" href="https://caribencana.id/team">Teams</a></li>-->
+									<!--<li><a class="dropdown-item" href="https://caribencana.id/career">Career</a></li>-->
+									<li><a class="dropdown-item" href="https://caribencana.id/disclaimer">Disclaimer</a></li>
+									<!-- <li><a class="dropdown-item" href="https://caribencana.id/faq">FAQ</a></li> !-->
+									<li><a class="dropdown-item" href="https://caribencana.id/contact">Contact</a></li>
+									<li><a class="dropdown-item" href="https://caribencana.id/testimonial">Testmonials</a></li>
+								</ul>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="nav-link" href="https://caribencana.id/products">Product</a>
+							</li>
+							<li class="nav-item mx-3">
+								<a class="nav-link" href="https://caribencana.id/portfolios">Portofolio</a>
+							</li>
+							<!-- <li class="nav-item mx-3">
+					<a class="nav-link" href="https://caribencana.id/posts">Blog <span class="badge bg-primary">New</span></a>
+					</li> -->
+							<li class="nav-item dropdown mx-3">
+								<a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
+									data-bs-toggle="dropdown" aria-expanded="false">Outreach <span class="badge bg-primary">New</span></a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="https://caribencana.id/posts">Blog</a></li>
+									<li><a class="dropdown-item" href="https://caribencana.id/gazette">Monthly Gazette</a></li>
+								</ul>
+							</li>
+
+						</ul>
+						<a href="https://caribencana.id/login" class="pe-2"><button class="btn-login"><span
+									class="material-icons">person</span> Login</button></a>
+
+						<button class="btn-search pe-2 d-flex justify-content-center align-items-center" data-bs-toggle="modal"
+							data-bs-target="#searchmain"><span class="material-icons">search</span></button>
+						<form class="d-flex">
+							<div class="langs ms-3 ">
+								<!-- <span class="material-icons ms-3 pt-2 align-middle">language</span> -->
+								<select class="lang pt-2" data-width="fit" data-style="btn-lang" onchange="location = this.value;">
+									<option selected value="https://caribencana.id/language/en">EN</option>
+									<option value="https://caribencana.id/language/id">ID</option>
+								</select>
+							</div>
+						</form>
+					</div>
+				</div>
+				<br>
+			</nav>
+		</header>
+		<!-- END: Main Menu-->
+
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+
+		<!-- Map
+================================================== -->
+		<section id="maps-container">
+			<!-- map goes here -->
+			<div id="map" data-map-scroll="false"></div>
+			<!--  -->
+
+			<!--  -->
+			<div id="layer-panel">
+				<button id="change-layers" class="btn-layers" onclick="show_panel()">
+					<span class="material-icons-round">layers</span> Change Layer
+
+				</button>
+				<div id="show_panel" class="panel-layer" style=" overflow-y: scroll;">
+					<div class="col-md-12">
+						<div class="style-2">
+							<!-- Toggle 1 -->
+							<div class="toggle-wrap">
+								<span class="trigger "><a href="#">CARI!<i class="sl sl-icon-plus"></i></a></span>
+								<div class="toggle-container">
+									<div class="checkboxes in-row	">
+										<input id="publications" type="checkbox" name="layers" value="publications" checked="checked">
+										<label for="publications">Publications</label>
+									</div>
+									<div class="checkboxes in-row	">
+										<input id="Knowledge" type="checkbox" name="layers" value="knowledge">
+										<label for="Knowledge">Knowledge Density</label>
+									</div>
+									<div class="checkboxes in-row	">
+										<input id="cds" type="checkbox" name="layers" value="cds">
+										<label for="cds">Disaster Research Center</label>
+									</div>
+									<div class="checkboxes in-row	">
+										<input id="prodi" type="checkbox" name="layers" value="prodi">
+										<label for="prodi">Disaster Management Study Program</label>
+									</div>
+
+									<div id="carilayers"></div>
+
+								</div>
+							</div>
+							<!-- Toggle 2 -->
+							<div class="toggle-wrap">
+								<span class="trigger"><a href="#">InaRISK<i class="sl sl-icon-plus"></i> </a></span>
+								<div class="toggle-container">
+
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios1"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_banjir/MapServer">
+										<label class="form-check-label" for="exampleRadios1">Flood</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios2"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_banjir_bandang/MapServer">
+										<label class="form-check-label" for="exampleRadios2">Flash Flood</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios3"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_cuaca_ekstrim/ImageServer">
+										<label class="form-check-label" for="exampleRadios3">Extreme Weather</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios4"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_gempabumi/MapServer">
+										<label class="form-check-label" for="exampleRadios4">Earthquake</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios7"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_gelombang_ekstrim_dan_abrasi/ImageServer">
+										<label class="form-check-label" for="exampleRadios7">Extreme Waves and Abrasion</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios6"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_kebakaran_hutan_dan_lahan/ImageServer">
+										<label class="form-check-label" for="exampleRadios6">Forest and Land Fires</label>
+									</div>
+
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios5"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_tsunami/MapServer">
+										<label class="form-check-label" for="exampleRadios5">Tsunami</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios8"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_kekeringan/ImageServer">
+										<label class="form-check-label" for="exampleRadios8">Drought</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios9"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/Bahaya_letusan_gunungapi/MapServer">
+										<label class="form-check-label" for="exampleRadios9">Volcano Eruptions</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios10"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_tanah_longsor/ImageServer">
+										<label class="form-check-label" for="exampleRadios10">Landslide</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios11"
+											value="https://inarisk1.bnpb.go.id:6443/arcgis/rest/services/inaRISK/layer_bahaya_multi/ImageServer"
+											checked>
+										<label class="form-check-label" for="exampleRadios11">Multi Hazzard</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="bahaya" id="exampleRadios12" value="">
+										<label class="form-check-label" for="exampleRadios12">Turn Off Layer</label>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="toggle-wrap">
+								<span class="trigger"><a href="#">Basemaps<i class="sl sl-icon-plus"></i> </a></span>
+								<div class="toggle-container">
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="basemap" value='1' id="grayscale" checked>
+												<label class="form-check-label" for="grayscale">
+													Grayscale
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="basemap" value='2' id="carto">
+												<label class="form-check-label" for="satelite">
+													Carto
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="basemap" value='3' id="satelite">
+												<label class="form-check-label" for="satelite">
+													Satelite
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="toggle-wrap">
+								<span class="trigger"><a href="#">All Layers<i class="sl sl-icon-plus"></i> </a></span>
+								<div class="toggle-container" id="forLayers">
+								</div>
+							</div>
+
+							<div class="toggle-wrap">
+								<span class="trigger"><a href="#">Legend<i class="sl sl-icon-plus"></i> </a></span>
+								<div class="toggle-container" id="legend-layers">
+									<div id="legend-layers"></div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!--  -->
+
+			<!-- Sum publication -->
+			<div id="publication-headers">
+				<div class="d-flex">
+					<div class="publication-geotag d-flex align-items-center">
+						<span class="material-icons-round pe-2 pub-icons" style="font-size:40px">description</span>
+						<div class="d-flex flex-column px-2">
+							<h2 id="pubCount" class="text-white">0</h2>
+							<span>geo-tagged research articles </span>
+						</div>
+					</div>
+					<div class="vr-divider "></div>
+					<div class="d-flex align-items-center ps-3">
+						<span>Click <a href="https://knowledge.caribencana.id/publications"><span
+									class="text-white fw-bold">Publications</span></a> for finding research articles without geotag</span>
+					</div>
+				</div>
+			</div>
+			<!-- end of Sum Publication -->
+		</section>
+
+		<!-- Content Brief
+================================================== -->
+		<section class="brief spacer" id="brief_section">
+			<div class="container-fluid" id="mobi-publication-headers">
+				<div class="d-flex">
+					<div class="publication-geotag d-flex align-items-center">
+						<h2 id="mobilepubCount" class="text-primary mt-0 pe-2">0</h2>
+						<span>geo-tagged research articles </span>
+					</div>
+				</div>
+				<div class="d-flex align-items-center">
+					<span>Click <a href="https://knowledge.caribencana.id/publications"><span
+								class="text-primary fw-bold">Publications</span></a> for finding research articles without geotag</span>
+				</div>
+			</div>
+			<div class="container-fluid" id="brief-s">
+				<div class="title-brief">
+					<div class="title-box">
+						<h4 class="mt-0 text-primary" id="area_brief_title">Area Brief</h4>
+					</div>
+				</div>
+
+				<div class="mt-4 brief-content w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+					<!-- <h3>List of Research Articles</h3> -->
+					<div id="area-brief-default">
+						<div class="d-flex align-items-center justify-content-center flex-column">
+							<img src="https://knowledge.caribencana.id/img/logo/bw-cari.png" style="width: 50%;">
+							<span class="subtitle">Click the <span class="text-primary">maps marker</span> above to view <span
+									class="fw-bold">Area Brief</span></span>
+						</div>
+					</div>
+
+					<div id="area-brief" style="display:none">
+						<div class="row">
+							<div class="col-md-6">
+								<div id="gap_radar"></div>
+							</div>
+							<div class="col-md-6 text-justify">
+								<h4><b>What is the knowledge landscape and how is it related to the occurrence of disasters and risks in
+										this area?</b></h4> <br> To answer this question, we display it in the form of a Gap Radar as shown
+								in the image below.<br><br> <b>Gap Radar - </b>Shows the gap between the relative amount of existing
+								knowledge of each type of disaster hazard (based on the number of studies available), disaster events
+								based on historical data (based on the number of disaster events on the BNPB website), and the value of
+								disaster risk ( based on the BNPB InaRISK Risk Index/ IRBI). The process of comparison between these
+								variables is carried out by standardizing each variable using the z value (the value of the standard
+								deviation from the average), a value less than 0 means that the value of the variable is below the
+								average value of each type of disaster, this means that the type of hazard is not a priority for the
+								study/rare/low risk. while a value of more than 0 describes the opposite, this means the type of hazard
+								that is the priority of the study / often occurs / high risk.
+							</div>
+
+						</div>
+						<div class="d-flex justify-content-end mt-2">
+							<a id="inspectArea" href="#" class="text-white">
+								<button class="btn btn-primary px-2 d-flex align-items-center justify-content-between">Read Detail
+									Inspect Area</button>
+							</a>
+						</div>
+						<hr style="border: 0.5px solid #F78550;">
+						<div class="d-flex justify-content-between align-items-center">
+							<span>Want to more information ??</span>
+							<a href="https://knowledge.caribencana.id/login" class="text-white">
+								<button class="btn btn-primary d-flex align-items-center justify-content-between"><span
+										class="material-icons-round mx-2">stars</span> Go To Premium Brief</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</section>
+		<hr style="border: 0.5px solid #F78550;">
+
+		<section class="w-100 h-100" id="detailPub">
+			<div class="container my-3">
+				<div class="sidebar-content">
+					<div class="sidebar-header">
+						<div class="d-flex align-items-center justify-content-between">
+							<h3 class="fw-bold">Detail Publication</h3>
+							<button type="button" class="btn-close" onclick="closeSidebar()" aria-label="Close"></button>
+						</div>
+					</div>
+					<hr style="border: 1px dashed #DDDDDD;">
+					<div class="sidebar-content">
+						<div>
+							<div class="d-flex justify-content-between">
+								<h3 class="fw-bold" id="detailTitle">title</h3>
+								<div class="d-flex align-items-center date-publication" style="height:60px">
+									<span class="material-icons-round text-primary me-2">date_range</span> <span
+										id="detailYear">year</span>
+								</div>
+							</div>
+						</div>
+						<hr style="border: 1px dashed #DDDDDD;">
+						<div class="body-card-publication d-flex mb-2">
+							<div class="body-icon">
+								<span class="material-icons-round text-primary">person</span>
+							</div>
+							<div class="body-content">
+								<span class="subtitle">Author</span>
+								<p class="content" id="detailAuthor">
+								</p>
+							</div>
+						</div>
+						<div class="body-card-publication d-flex">
+							<div class="body-icon">
+								<span class="material-icons-round text-primary">description</span>
+							</div>
+							<div class="body-content">
+								<span class="subtitle">Abstrack</span>
+								<p class="content" id="detailAbstract">abstract</p>
+							</div>
+						</div>
+						<div class="body-card-publication2">
+							<div class="content-card-1">
+								<div class="body-card-publication d-flex h-100">
+									<div class="body-icon">
+										<span class="material-icons-round text-primary">article</span>
+									</div>
+									<div class="body-content">
+										<span class="subtitle">DOI</span>
+										<h4 class="fw-bold" id="detailDOI">doi</h4>
+									</div>
+								</div>
+							</div>
+							<div class="content-card-2">
+								<div class="body-card-publication d-flex h-100">
+									<div class="body-icon">
+										<span class="material-icons-round text-primary">language</span>
+									</div>
+									<div class="body-content">
+										<span class="subtitle">Journal</span>
+										<h4 class="fw-bold" id="detailPublisher"></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="sidebar-footer">
+						<div class="container-fluid">
+							<div class="d-flex justify-content-end">
+								<a href="#" id="detailSourceLink" target="_blank"><button class="btn btn-outline-primary me-2"
+										data-bs-dismiss="modal"><span
+											class="material-icons-round text-primary me-1">link</span>Source</button></a>
+								<a href="#" target="_blank" id="detailFeedback"><button type="button" class="btn btn-primary"><span
+											class="material-icons-round me-1">rate_review</span>Feedback</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- Content Publication
+================================================== -->
+
+
+		<section id="publications"
+			class="container-fluid fullwidth margin-top-10 padding-top-10 padding-bottom-20 padding-left-30 padding-right-30">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-3 col-md-4">
+						<div class="sidebar">
+							<form action="" autocomplete="off" id="filterForm">
+								<!-- Widget -->
+								<div id="filters" class="widget margin-bottom-40 ">
+									<h4 class="fw-bold mb-3">Filter</h4>
+									<div class="row with-forms panel-filter">
+										<div class="col-md-12">
+											<div class="panel-title collapsed" aria-expanded="true" data-bs-toggle="collapse"
+												data-bs-target="#idKU">
+												<h4 class="fw-500">Research Article on IDKU</h4>
+											</div>
+											<div id="idKU" class="collapse mt-2">
+												<select data-placeholder="Research Article on IDKU" class="js-example-basic-single" name="idku"
+													id="idku">
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row with-forms panel-filter">
+										<div class="col-md-12">
+											<div class="panel-title" aria-expanded="true" data-bs-toggle="collapse" data-bs-target="#keyword">
+												<h4 class="fw-500">Keywords</h4>
+											</div>
+											<div id="keyword" class="collapse show mt-2">
+												<input type="text" value="" name="q" class="mb-0" placeholder="Search keyword .." />
+											</div>
+										</div>
+									</div>
+
+									<div id="years" class="row with-forms panel-filter">
+										<div class="col-md-12">
+											<div class="panel-title collapsed" aria-expanded="true" data-bs-toggle="collapse"
+												data-bs-target="#Years">
+												<h4 class="fw-500">Year</h4>
+											</div>
+											<div id="Years" class="collapse mt-2">
+												<input type="text" class="js-range-slider" name="years" />
+											</div>
+										</div>
+									</div>
+
+									<div class="row with-forms panel-filter">
+										<div class="col-md-12">
+											<div class="panel-title collapsed" aria-expanded="true" data-bs-toggle="collapse"
+												data-bs-target="#disasterPhase">
+												<h4 class="fw-500">Disaster Phase</h4>
+											</div>
+											<div id="disasterPhase" class="collapse show mt-2">
+												<div class="checkboxes one-in-row ">
+													<div id="mainDMF"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Row -->
+									<div class="row with-forms panel-filter">
+										<!-- Province -->
+										<div class="col-md-12">
+											<div class="panel-title collapsed" aria-expanded="true" data-bs-toggle="collapse"
+												data-bs-target="#Province">
+												<h4 class="fw-500">Filter By Province</h4>
+											</div>
+											<div id="Province" class="collapse mt-2">
+												<select onchange="getCities(this)" data-placeholder="Filter By Province" name="provincy[]"
+													id="provincy" class="js-example-basic-multiple" name="states[]" multiple="multiple">
+												</select>
+											</div>
+										</div>
+									</div>
+									<!-- Row / End -->
+
+									<div class="row with-forms panel-filter">
+										<!-- City -->
+										<div class="col-md-12">
+											<div class="panel-title collapsed" aria-expanded="true" data-bs-toggle="collapse"
+												data-bs-target="#Cityphase">
+												<h4 class="fw-500">Filter By Cities</h4>
+											</div>
+											<div id="Cityphase" class="collapse mt-2">
+												<select data-placeholder="Filter By Cities" name="cities[]" id="cities"
+													class="js-example-basic-multiple" name="states[]" multiple="multiple">
+													<option label="blank"></option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<!-- Row -->
+									<div class="row with-forms panel-filter">
+										<!-- Type -->
+										<div class="col-md-12">
+											<div class="panel-title collapsed" aria-expanded="true" data-bs-toggle="collapse"
+												data-bs-target="#Hazards">
+												<h4 class="fw-500">Filter By Hazards</h4>
+											</div>
+											<div id="Hazards" class="collapse mt-2">
+												<select data-placeholder="Filter By Hazards" name="hazards[]" id="hazards"
+													class="js-example-basic-multiple" name="states[]" multiple="multiple">
+												</select>
+											</div>
+										</div>
+									</div>
+									<!-- Row / End -->
+									<!-- More Search Options / End -->
+									<div class="row with-forms mt-4">
+										<div class="col-md-6">
+											<a href="https://knowledge.caribencana.id" class="button border"
+												style="width: 100%;text-align: center;">Reset Filter</a>
+										</div>
+										<div class="col-md-6">
+											<button type="submit" class="button" style="width: 100%">Apply Filter</button>
+										</div>
+									</div>
+								</div>
+							</form>
+							<!-- Widget / End -->
+						</div>
+					</div>
+					<!-- Sidebar / End -->
+					<div id="list-of-publication" class="col-lg-9 col-md-8">
+						<div class="style-1" id="data_section">
+							<!-- Tabs Navigation -->
+							<ul class="tabs-nav d-flex justify-content-center mb-3">
+								<li><a href="#publication-tab">
+										<h4>Publication</h4>
+									</a></li>
+								<li><a href="#policy-tab">
+										<h4>Policy</h4>
+									</a></li>
+								<!-- <li><a href="#news-tab"><h3>News</h3></a></li> -->
+							</ul>
+							<!-- Tabs Content -->
+							<div class="tabs-container">
+								<div class="tab-content" id="publication-tab">
+									<div class="row">
+										<div class="col-md-6 col-xs-6">
+											<div class="layout-switcher">
+												<h4 class="text-dark fw-bold">List of Research Articles</h4>
+											</div>
+										</div>
+
+										<div class="col-md-6 col-xs-6">
+											<div class="sort-by">
+												<div class="sort-by-select">
+													<select data-placeholder="Latest Publication" class="chosen-select-no-single"
+														onchange="location = this.value;">
+														<option value="https://knowledge.caribencana.id/publications?sorting_publication=desc">
+															Latest articles</option>
+														<option value="https://knowledge.caribencana.id/publications?sorting_publication=asc">Oldest
+															articles</option>
+													</select>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+									<div id="publications_list"></div>
+								</div>
+
+								<div class="tab-content" id="policy-tab">
+									<h4 class="text-dark mb-3 fw-bold">Policy Documents</h4>
+									<div id="policyList"></div>
+
+								</div>
+
+							</div>
+						</div>
+						<!-- Sorting / Layout Switcher -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="modal fade bd-example-modal-lg" id="disclaimerModal" tabindex="-1"
+			aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<b>
+							<h4 class="modal-title" id="disclaimerModalLabel">Disclaimer</h4>
+						</b>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<ol style="padding-left: 20px;">
+							<li>CARI! dan segala informasi, konten, atau layanan yang tersedia pada atau melalui CARI! disediakan
+								secara “sebagaimana adanya” (“as is”) dan “sebagaimana tersedia” (“as available”) dan kami menyangkal
+								segala jaminan dalam segala bentuk (pernyataan, tersirat, dan lainnya), termasuk, tanpa batasan, segala
+								pembenaran penjualbelian yang tersirat, kesesuaian untuk penggunaan tertentu dan non-pelanggaran dan
+								segala penjaminan bahwa situs akan dioperasikan secara tidak terinterupsi atau kondisi bebas error atau
+								bebas virus atau komponen berbahaya lainnya, kecuali sejauh segala penjaminan tersebut dapat tidak
+								disangkal di bawah hukum yang berlaku.</li>
+							<li>Kecuali dilarang dalam hukum yang berlaku, kami tidak bertanggung jawab untuk, dan menyatakan
+								penolakan, terhadap segala bentuk kehilangan, kecelakaan, kerusakan, atau kerugian yang disebabkan oleh
+								penggunaan CARI! dan segala konten situs. Peniadaan tanggung jawab ini termasuk, dan tidak terbatas
+								pada, segala ganti rugi khusus, tanpa sengaja, sebagai akibat, penghukuman, atau denda, seperti
+								kehilangan pendapatan, data, pendapatan yang diantisipasi, dalam kondisi apapun dan kapanpun. Peniadaan
+								tanggung jawab ini berlaku termasuk apabila pemberi lisensi mengetahui atau dapat mengetahui kemungkinan
+								dari kerusakan tersebut.</li>
+							<li>Apabila peniadaan tanggung jawab tidak dapat disangkal di bawah hukum, setiap pertanggungjawaban kami
+								terbatas pada kehilangan finansial yang aktual dan langsung, yang dapat dibuktikan bahwa diakibatkan
+								oleh kelalaian kami sendiri.</li>
+						</ol>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-cari" data-dismiss="modal">Done</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- feedback of publication -->
+		<div class="modal  bd-example-modal-lg" id="feedback-modal" aria-labelledby="feedback-modal-label"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="feedback-title"></h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form action="#" method="post">
+						<div class="modal-body">
+							<div class="row container-feedback">
+								<!-- Name -->
+								<div class="col-md-6">
+									<h5>Name</h5>
+									<input type="text" placeholder="Henry" id="name_feedback" name="name_feedback">
+								</div>
+
+								<!-- email -->
+								<div class="col-md-6">
+									<h5>Email</h5>
+									<input type="email" id="email_feeback" name="email_feedback" placeholder="Hendry@caribencana.id">
+								</div>
+
+								<!-- Your feedback -->
+								<div class="col-md-12">
+									<h5>Feedback</h5>
+									<textarea class="form-control" id="feedback" rows="3" name="feedback"></textarea>
+								</div>
+
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-cari" data-dismiss="modal">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- end detail of publication -->
+
+		<!-- Request analysis of publication -->
+		<div class="modal  bd-example-modal-lg" id="request-modal" aria-labelledby="request-modal-label" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="Request-title">Request Extended Analysis</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form action="#" method="post">
+						<div class="modal-body">
+							<div class="row container-feedback">
+								<!-- Name -->
+								<div class="col-md-6">
+									<h5>Name</h5>
+									<input type="text" placeholder="Henry" id="name_Request" name="name_Request">
+								</div>
+
+								<!-- email -->
+								<div class="col-md-6">
+									<h5>Institutions</h5>
+									<input type="text" id="text_feeback" name="text_Request" placeholder="Caribencana.id">
+								</div>
+
+								<div class="col-md-6">
+									<h5>Terms of Reference <i class="tip" data-tip-content="Maximum of 50 MB size Document"></i></h5>
+									<div class="submit-section">
+										<form action="/file-upload" class="dropzone"></form>
+									</div>
+								</div>
+
+								<!-- Your Request -->
+								<div class="col-md-12">
+									<h5>Request</h5>
+									<textarea class="form-control" id="Request" rows="3" name="Request"></textarea>
+								</div>
+
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-cari" data-dismiss="modal">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- end detail of publication -->
+
+
+		<!-- Footer
+================================================== -->
+
+		<!-- subscribe -->
+		<section class="spacer-2">
+			<div id="subscribe" class="bg-footer"
+				style="background-image: url(img/svg/hexa2.svg);background-repeat: initial; background-size: auto; background-position: center;">
+				<div class="container padding-bottom-10 padding-top-10 center">
+					<div class="col-sm-5">
+						<h5 class="white-text font-wg-100" data-aos="fade-right">Subscribe</h5>
+						<div data-aos="fade-right" data-aos-duration="1500">
+							<h3 class="white-text subscribe-font">
+								For more updates & tailor-made special briefs
+								<!-- For more <span class="font-wg-bold">updates</span> & tailor-made special briefs</h3> -->
+
+								<div class="padding-top-10 input-group mb-3">
+									<form
+										action="https://caribencana.us10.list-manage.com/subscribe/post?u=a5889745bad1e348337999912&amp;id=b4ede9d115"
+										method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+										novalidate style="padding: 10px 0 10px 0%;">
+										<!-- <input type="hidden" name="_token" value="YeBtGGeC8Vw6aKYlx5g5rYchefbglgDnF5G56ACR" /> -->
+										<div class="d-flex align-items-center">
+											<div class="d-flex flex-column me-2">
+												<label for="mce-EMAIL" style="color: white;">Email Address <span
+														class="asterisk">*</span></label>
+												<input type="email" value="" name="EMAIL" class="form-control form-control-sm required email"
+													id="mce-EMAIL">
+											</div>
+											<button class="btn btn-light" id="btn-subscribe" type="submit" style="width: auto;">
+												<span class="text-primary fw-500"> Subscribe!</span>
+											</button>
+										</div>
+									</form>
+								</div>
+
+								<div class="text-center">
+									<span id="success" class="text-success"></span>
+									<span id="error" style="color: #d90429;"></span>
+								</div>
+						</div>
+					</div>
+					<div class="col-sm-7 padding-bottom-10 padding-top-10 ">
+						<br />
+						<div data-aos="fade-left" data-aos-duration="1000">
+							<h3 class="subscribe-font">our <span class="font-wg-bold">Mantra</span></h3>
+						</div>
+						<p class="white-text" data-aos="fade-left" data-aos-duration="1500"><i>"Big data is enriching, Actionable
+								information is critical, but Knowledge-based investment and development is indispensable for genuine
+								resilience!"</i></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- //subscribe<!-- footer -->
+		<div id="footer" class="margin-top-20 padding-top-20">
+			<!-- Main -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<h4>Mailing Address</h4>
+						<div class="text-widget">
+							<span>-<!-- Jalan Sepak Bola nomor 5, Arcamanik Endah, Bandung, Jawa Barat, 40293 --></span> <br>
+							Phone: <span>-<!-- (+62)  81-1203-0108 --> </span><br>
+							E-Mail:<span> <a href="#"> info@caribencana.id</a> </span><br>
+							Due to COVID-19, all staff and associates of CARI! are working remotely.
+						</div>
+					</div>
+					<div class="col-md-3  col-sm-6">
+						<h4>Tokyo Studio</h4>
+						<div class="text-widget">
+							<span>-<!-- 3-18-24 Nishiayase, Adachi-ku, Tokyo, Japan. 120-0014 --></span> <br>
+							Phone: <span>-<!-- (+81) 80-4838-4516 --> </span><br>
+							E-Mail:<span> <a href="mailto::info@caribencana.id">info@caribencana.id</a> </span><br>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12">
+						<h4>Pages</h4>
+						<ul class="footer-links">
+							<li><a href="https://caribencana.id">Home</a></li>
+							<li><a href="https://knowledge.caribencana.id">Knowledge Portal</a></li>
+							<li><a href="https://knowledge.caribencana.id/publications">Publications</a></li>
+							<li><a href="#">About</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<h4>For more information, Follow us !</h4>
+						<ul class="social-icons margin-top-10">
+							<li><a class="facebook" href="https://www.facebook.com/caribencana.id" target="_blank"><i
+										class="icon-facebook"></i></a></li>
+							<li><a class="linkedin" href="https://www.linkedin.com/company/caribencana/" target="_blank"><i
+										class="icon-linkedin"></i></a></li>
+							<li><a class="instagram" href="https://www.instagram.com/caribencana.id/" target="_blank"><i
+										class="icon-instagram"></i></a></li>
+							<li><a class="twitter" href="https://twitter.com/caribencana_id" target="_blank"><i
+										class="icon-twitter"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- Copyright -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="copyrights">©
+							<script>document.write(new Date().getFullYear());</script> Caribencana.id
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end footer<!-- Footer / End -->
+
+		<!-- Back To Top Button -->
+		<div id="backtotop"><a href="#"></a></div>
+	</div>
+	<!-- Wrapper / End -->
+
+	<!-- modal how to use -->
+	<div class="modal fade bd-example-modal-lg" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<div class="mantra padding-bottom-10" style="text-align:center;">
+						<h3>Our Mantra is</h3>
+						<h4> <i><b>Big data is enriching Actionable information is critical but knowledge-based investment and
+									development is indispensable for genuine resilience!</b></i></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end modal how to use -->
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+
+
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/jquery-migrate-3.1.0.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/tooltips.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/custom.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/mmenu.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/chosen.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/slick.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/rangeslider.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/magnific-popup.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/waypoints.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/counterup.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/moment.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/daterangepicker.js"></script>
+	<!--Plugin JavaScript file-->
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script src="https://code.highcharts.com/themes/grid-light.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/app.js"></script>
+	<script src="https://knowledge.caribencana.id/scripts/jquery.loadingModal.js"></script>
+
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<!-- End AOS -->
+	<script type="text/javascript">
+		$('.navbar-nav>li>a').on('click', function () {
+			$('.navbar-collapse').collapse('hide');
+		});
+		//animation
+		$(document).ready(function () {
+			$(document).ajaxStart(function () {
+				$(".loading-container").css('display', 'block');
+			});
+
+			$(document).ajaxStop(function () {
+				$(".loading-container").css('display', 'none');
+			});
+
+
+		});
+	</script>
+
+	<!-- leaflet -->
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		crossorigin=""></script>
+	<script src="scripts/leaflet-markercluster.min.js"></script>
+	<script src="scripts/leaflet-gesture-handling.min.js"></script>
+	<!-- esri layers -->
+	<script src="https://unpkg.com/esri-leaflet@2.5.3/dist/esri-leaflet.js"
+		integrity="sha512-K0Vddb4QdnVOAuPJBHkgrua+/A9Moyv8AQEWi0xndQ+fqbRfAFd47z4A9u1AW/spLO0gEaiE1z98PK1gl5mC5Q=="
+		crossorigin=""></script>
+	<script src="https://knowledge.caribencana.id/scripts/leaflet-omnivore.js"></script>
+	<!-- Leaflet Maps Scripts -->
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/maps.js"></script>
+
+	<!-- intro JS -->
+	<script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/jQWCloudv3.4.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".load").fadeOut('slow');
+		});
+	</script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/app/homes.js"></script>
+	<script type="text/javascript" src="https://knowledge.caribencana.id/scripts/app/filter.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.js-example-basic-single').select2();
+			$('.js-example-basic-multiple').select2();
+
+		});
+
+		function formatState(state) {
+			if (!state.id) {
+				return state.text;
+			}
+			var baseUrl = "img/icon";
+			var val = state.element.value.toLowerCase();
+			var $state = $(
+				'<a href="https://knowledge.caribencana.id/lang/' + val + '" class="svg-flag d-flex align-items-center"><img src="' + baseUrl + '/' + val + '.svg" class="img-flags" /><span class="ms-2">' + state.text + '</span></a>'
+			);
+			return $state;
+		};
+
+		$(".js-example-templating").select2({
+			templateResult: formatState,
+			templateSelection: formatState,
+		});
+
+
+		$(document).ready(function () {
+			$('.js-example-basic-single').select2();
+		});
+		function show_panel() {
+			// console.log('panel show');
+			$('#show_panel').toggle('slow');
+		}
+
+		// intro js
+		var intro = introJs();
+		window.addEventListener('load', function () {
+			var doneTour = localStorage.getItem('caribencana_v2') === 'Completed';
+			if (doneTour) {
+				return;
+			} else {
+				intro.setOptions({
+					steps: [
+						{
+							intro: "Are you looking for disaster related information in your area ? <br> Please follow the instruction.",
+							title: "<center>Welcome to CARI!</center>"
+							// onchange:hide_modal()
+						},
+						{
+							element: document.querySelector('#menu-header'),
+							intro: "Click <b>Maps</b> to see the distribution of information in the form of studies, researches, publications, and others related to disasters on a map.  <br> Click <b>Publications</b> to see the list of studies, researches, publications, and others related to disasters. <br> Click <b>About</b> to know more about CARI!.",
+							title: "CARI!’s Main Menu",
+							position: 'left',
+						},
+						{
+							element: document.querySelector('#map-container'),
+							intro: "This map shows the distribution of research publications and its relation to disaster risks in each area.<br> Do you find relevant disaster risk information and its studies in your selected area ?",
+							position: 'middle',
+						},
+						{
+							element: document.querySelector('#change-layers'),
+							intro: "This panel allows you to change the basemap visualization",
+							position: 'right',
+						},
+						{
+							element: document.querySelector('#publication-headers'),
+							intro: "This panel shows the number of publications and journal-title.",
+							position: 'bottom',
+						},
+						{
+							element: document.querySelector('#filters'),
+							intro: "This panel shows specific filters to search for research locations, publication year article categories, and article categorizations.",
+							position: 'right',
+						},
+						{
+							element: document.querySelector('#list-of-publication'),
+							intro: "This panel displays the results of the filters you selected.",
+
+						},
+						{
+							element: document.querySelector('#brief-s'),
+							intro: "Area Brief panel provides summary of disaster-related information in the selected areas.",
+							position: 'top',
+						},
+						{
+							intro: "<center>Enjoy searching!</center>",
+							title: "Thank you."
+							// onchange:hide_modal()
+						},
+					],
+					exitOnOverlayClick: false,
+				});
+
+
+				intro.oncomplete(function (targetElement) {
+					// console.log(this._currentStep);
+					if (this._currentStep === 9) {
+						homePanel();
+						localStorage.setItem('caribencana_v2', 'Completed');
+					}
+				});
+				intro.start();
+				intro.onexit(function () {
+					localStorage.setItem('caribencana_v2', 'Completed');
+				});
+			}
+		});
+		// intro js end
+
+		function demo() {
+			var intro = introJs();
+			intro.setOptions({
+				steps: [
+					{
+						intro: "Are you looking for disaster related information in your area ? <br> Please follow the instruction.",
+						title: "<center>Welcome to CARI!</center>"
+					},
+					{
+						element: document.querySelector('#menu-header'),
+						intro: "Click <b>Maps</b> to see the distribution of information in the form of studies, researches, publications, and others related to disasters on a map.  <br> Click <b>Publications</b> to see the list of studies, researches, publications, and others related to disasters. <br> Click <b>About</b> to know more about CARI!.",
+						title: "CARI!’s Main Menu",
+						position: 'left',
+					},
+					{
+						element: document.querySelector('#map-container'),
+						intro: "This map shows the distribution of research publications and its relation to disaster risks in each area.<br> Do you find relevant disaster risk information and its studies in your selected area ?",
+						position: 'middle',
+					},
+					{
+						element: document.querySelector('#change-layers'),
+						intro: "This panel allows you to change the basemap visualization",
+						position: 'right',
+					},
+					{
+						element: document.querySelector('#publication-headers'),
+						intro: "This panel shows the number of publications and journal-title.",
+						position: 'bottom',
+					},
+					{
+						element: document.querySelector('#filters'),
+						intro: "This panel shows specific filters to search for research locations, publication year article categories, and article categorizations.",
+						position: 'right',
+					},
+					{
+						element: document.querySelector('#list-of-publication'),
+						intro: "This panel displays the results of the filters you selected.",
+						position: 'right',
+					},
+					{
+						element: document.querySelector('#brief-s'),
+						intro: "Area Brief panel provides summary of disaster-related information in the selected areas.",
+						position: 'right',
+					},
+					{
+						intro: "<center>Enjoy searching!</center>",
+						title: "Thank you."
+						// onchange:hide_modal()
+					},
+				],
+				exitOnOverlayClick: false,
+			});
+
+			intro.start();
+		}
+
+		function show_modal() {
+			$('#disclaimerModal').modal('show');
+		}
+
+		function hide_modal() {
+			$('#disclaimerModal').modal('hide');
+		}
+
+		function feedbackPublication(id, title) {
+			$("#feedback-modal").modal('show');
+			$("#feedback-title").html(title);
+			$("#publicationID").val(id);
+		}
+
+		var id_provincies = $.parseJSON('[]');
+		var id_data_cities = $.parseJSON('[]');
+		// console.log(id_data_cities);
+		//get data cities
+		//extract data year
+
+		$('body').on('click', '.pagination a', function (e) {
+			e.preventDefault();
+			var url = $(this).attr('href');
+			var pathname = new URL(url).pathname;
+			const pathArray = pathname.split("/");
+			var selection = pathArray.at(-1);
+			if (selection == 'publication') {
+				$('#load a').css('color', '#dfecf6');
+				getArticles(url);
+			} else if (selection == 'policy') {
+				$('#loadPolicy a').css('color', '#dfecf6');
+				getPolicy(url);
+			}
+		});
+
+		function closeSidebar() {
+			$('#detailPub').show(200).fadeOut();
+			$('html').css('overflow', 'scroll');
+		}
+	</script>
+
+	<script type="text/javascript">
+		let lastscrollTop = 0;
+		navbar = document.getElementById("navbar");
+		window.addEventListener("scroll", function() {
+			let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrollTop > lastscrollTop){
+				navbar.style.top = "-80px";
+			} else {
+				navbar.style.top = "0";
+			}
+			lastscrollTop = scrollTop
+		})
+	</script>
+
+</body>
+</html>
